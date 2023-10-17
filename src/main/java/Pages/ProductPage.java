@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,5 +24,19 @@ public class ProductPage extends BasePage{
         WebElement element = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(this.productName));
         return element.getText();
+    }
+
+    public String getAlertText(){
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.alertIsPresent());
+        Alert alert = driver.switchTo().alert();
+        return alert.getText();
+    }
+
+    public void acceptAlert(){
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.alertIsPresent());
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
 }
