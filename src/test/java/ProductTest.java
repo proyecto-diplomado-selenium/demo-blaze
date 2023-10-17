@@ -19,4 +19,18 @@ public class ProductTest extends BaseTest{
 
         Assert.assertEquals(actual, expected, "Incorrect name of product.");
     }
+
+    @Test
+    public void addProductToCart() throws InterruptedException {
+        HomePage homePage = new HomePage(driver);
+        ProductPage productPage = new ProductPage(driver);
+
+        homePage.clickOnProductWithName("Samsung galaxy s6");
+        productPage.clickOnAddToCart();
+
+        String actual=  productPage.getAlertText();
+        String expected = "Product added";
+
+        Assert.assertEquals(actual, expected, "Incorrect added product to cart.");
+    }
 }
