@@ -29,4 +29,22 @@ public class CartPage extends BasePage{
     public void deleteProductFromCartWithName(String productName) {
         driver.findElement(By.xpath("//td[text()='"+productName+"']/following-sibling::td/a")).click();
     }
+
+    //Wil
+
+    public String waitForSpecificProductPrice(String targetPrice) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until((WebDriver driver) -> {
+            WebElement element = driver.findElement(this.totalPrice);
+            String currentPrice = element.getText();
+            if (currentPrice.equals(targetPrice)) {
+                return currentPrice;
+            } else {
+                return null;
+            }
+        });
+    }
+
+
 }
