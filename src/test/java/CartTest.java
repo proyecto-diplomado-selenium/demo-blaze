@@ -32,11 +32,11 @@ public class CartTest extends BaseTest{
 
         homePage.clickOnProductWithName("Samsung galaxy s6");
         productPage.clickOnAddToCart();
-        productPage.acceptAlert2();
+        productPage.acceptAlert();
         navbarPage.clickOnHomeOption();
         homePage.clickOnProductWithName("Nexus 6");
         productPage.clickOnAddToCart();
-        productPage.acceptAlert2();
+        productPage.acceptAlert();
         navbarPage.clickOnCartOption();
         String actual = cartPage.getTotal();
         String expected = "1010";
