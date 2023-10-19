@@ -47,4 +47,14 @@ public class PlaceOrderPage extends BasePage{
     public void clickOnPurchaseButton() {
         driver.findElement(this.purchaseBtn).click();
     }
+
+    public void fillPurchaseInformation(String name,String country,String city,String numberCard,String month,String year){
+        enterName(name);
+        enterCountry(country);
+        enterCity(city);
+        enterCard(numberCard);
+        enterMonth(month);
+        enterYear(year);
+        clickOnPurchaseButton();
+    }
 }
