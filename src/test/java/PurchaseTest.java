@@ -1,10 +1,12 @@
 import Pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.Log;
 
 public class PurchaseTest extends BaseTest{
     @Test
     public void validateSuccessPurchaseTest() throws InterruptedException {
+        Log.info("Tests running validateSuccessPurchaseTest!");
         HomePage homePage = new HomePage(driver);
         ProductPage productPage = new ProductPage(driver);
         NavbarPage navbarPage = new NavbarPage(driver);
@@ -27,6 +29,7 @@ public class PurchaseTest extends BaseTest{
 
     @Test
     public void validateSuccessPurchaseMessageTest() throws InterruptedException {
+        Log.info("Tests running validateSuccessPurchaseMessageTest!");
         HomePage homePage = new HomePage(driver);
         ProductPage productPage = new ProductPage(driver);
         NavbarPage navbarPage = new NavbarPage(driver);
