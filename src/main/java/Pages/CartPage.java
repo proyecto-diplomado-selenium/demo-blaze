@@ -7,10 +7,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CartPage extends BasePage{
     private final By placeOrderBtn = By.xpath("//button[@data-toggle=\"modal\"]");
     private final By totalPrice = By.id("totalp");
+
+
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -30,7 +33,10 @@ public class CartPage extends BasePage{
         driver.findElement(By.xpath("//td[text()='"+productName+"']/following-sibling::td/a")).click();
     }
 
+
     //Wil
+
+
 
     public String waitForSpecificProductPrice(String targetPrice) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -46,5 +52,8 @@ public class CartPage extends BasePage{
         });
     }
 
+    public List<WebElement> getItemsInCart() {
+        return driver.findElements(By.xpath("//table[@class='table']/tbody/tr"));
+    }
 
 }
