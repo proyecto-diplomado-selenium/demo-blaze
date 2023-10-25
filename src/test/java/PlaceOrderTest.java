@@ -16,6 +16,7 @@ public class PlaceOrderTest extends BaseTest
             NavbarPage navbarPage = new NavbarPage(driver);
             CartPage cartPage = new CartPage(driver);
             PlaceOrderPage placeOrderPage = new PlaceOrderPage(driver);
+        ConfirmationPurchasePage confirmationPurchasePage = new ConfirmationPurchasePage(driver);
 
             homePage.clickOnProductWithName("Nexus 6");
             productPage.clickOnAddToCart();
@@ -26,13 +27,12 @@ public class PlaceOrderTest extends BaseTest
             productPage.acceptAlert();
             navbarPage.clickOnCartOption();
             cartPage.clickOnPlaceOrderButton();
-            placeOrderPage.enterName("Alan Brito Delgado");
-            placeOrderPage.enterCountry("Bolivia");
-            placeOrderPage.enterCity("La Paz");
-            placeOrderPage.enterCard("8000800080008000");
-            placeOrderPage.enterMonth("October");
-            placeOrderPage.enterYear("2023");
-            placeOrderPage.clickOnPurchaseButton();
+            placeOrderPage.fillPurchaseInformation("userTest","Bolivia","La Paz","1234567","Agosto","2023");
+
+            String actualMessage =confirmationPurchasePage.getMessagePurchase();
+            String expectedMessage = "Thank you for your purchase!";
+
+            Assert.assertEquals(actualMessage,expectedMessage,"Success message does not exist.");
 
         }
     }
