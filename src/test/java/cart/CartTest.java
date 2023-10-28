@@ -32,7 +32,6 @@ public class CartTest extends BaseTest {
         ProductPage productPage = new ProductPage(driver);
         NavbarPage navbarPage = new NavbarPage(driver);
         CartPage cartPage = new CartPage(driver);
-
         homePage.clickOnProductWithName("Samsung galaxy s6");
         productPage.clickOnAddToCart();
         productPage.acceptAlert();

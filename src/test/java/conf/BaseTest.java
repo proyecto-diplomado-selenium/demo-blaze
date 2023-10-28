@@ -28,7 +28,9 @@ public class BaseTest {
     @Parameters({"url", "browser"})
     public void setup(String url, String browser, Method method) throws Exception {
 
+        String url2 = "https://www.demoblaze.com/";
         Log.info("Tests is starting!");
+        System.out.println("url" + url);
         ReportHelper.getInstance().startTest(method.getName());
         driver = WebDriverFactory.getDriver(browser);
         driver.manage().window().maximize();
