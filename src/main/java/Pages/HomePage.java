@@ -31,7 +31,7 @@ public class HomePage extends BasePage {
 
     public void clickOnProductWithName(String productName) {
 
-        WebElement element = new WebDriverWait(driver, Duration.ofSeconds(5))
+        WebElement element = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='card-block']//a[.='" + productName + "']")));
         element.click();
     }
