@@ -1,17 +1,13 @@
-package conf;
+package ui.conf;
+
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.ITestResult;
+import org.testng.annotations.*;
 import utils.Log;
 import utils.ReportHelper;
 import utils.ScreenShotHelper;
-import org.testng.annotations.Parameters;
 import webdriver.factory.WebDriverFactory;
-
 
 import java.lang.reflect.Method;
 import java.time.Duration;

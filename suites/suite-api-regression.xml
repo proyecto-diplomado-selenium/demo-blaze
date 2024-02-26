@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AllTestsSuite">
+    <test name="AllTests">
+        <!--    <packages>-->
+        <!--        <package name="api.testcases" />-->
+        <!--    </packages>-->
+        <classes>
+            <class name="api.testcases.BaseTest"/>
+            <class name="api.testcases.TeamTest"/>
+            <class name="api.testcases.SpaceTest"/>
+            <class name="api.testcases.FolderTest"/>
+            <class name="api.testcases.ListTest"/>
+        </classes>
+    </test>
+</suite>

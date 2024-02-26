@@ -5,14 +5,11 @@
     <test name="Executing tests in Chrome" >
         <parameter name="browser" value="chrome"/>
         <packages>
-<!--            <package name="login" />-->
-<!--            <package name="cart" />-->
-<!--            <package name="product" />-->
-<!--            <package name="purchase" />-->
-<!--            <package name="prueba" />-->
-<!--            <package name="Folders" />-->
-<!--            <package name="lists" />-->
-            <package name="Tasks" />
+            <package name="ui.prueba" />
+            <package name="ui.Spaces" />
+            <package name="ui.Folders" />
+            <package name="ui.lists" />
+            <package name="ui.Tasks" />
         </packages>
     </test>
 
